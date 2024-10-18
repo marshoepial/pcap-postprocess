@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 pcap_file="$1"
 base_name="${pcap_file%.*}"
@@ -22,3 +22,6 @@ pdml_file="${base_name}.pdml"
 tshark -r "$pcap_file" -T pdml > "$pdml_file"
 
 fi
+
+# then run the python parser on the pdml file
+python3 parse_pdml.py "$pdml_file"
