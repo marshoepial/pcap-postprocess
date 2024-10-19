@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 pcap_file="$1"
 base_name="${pcap_file%.*}"
